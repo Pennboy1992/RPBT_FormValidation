@@ -26,9 +26,7 @@ function checkEmail(input) {
     showSuccess(input);
   } else {
     showError(input, `Email is not valid.`)
-
   }
-
 }
 
 // Check required fields 
@@ -51,7 +49,6 @@ function checkLength(input, min, max) {
   } else {
     showSuccess(input);
   }
-
 }
 
 // Check passwords match 
@@ -59,9 +56,7 @@ function checkPasswordsMatch(input1, input2) {
   if (input1.value !== input2.value) {
     showError(input2, `Passwords must match`);
   }
-
 }
-
 
 // Get Field Name 
 function getFieldName(input) {
