@@ -16,16 +16,27 @@ function showError(input, message) {
 // Show success outline
 function showSuccess(input) {
   const formControl = input.parentElement;
-  formControl.className = 'form-control error';
+  formControl.className = 'form-control success';
+}
+
+// Check if email is valid
+function isValidEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 
 }
+
+// Check required fields 
+function checkRequired(inputArr) {
+  inputArr.forEach(function (input) {
+    console.log(input);
+  })
+}
+
 
 // Event Listeners
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  if (username.value === '') {
-    showError(username, 'Username is required');
-  } else {
-    showSuccess(username);
-  }
+  checkRequired([username, email, password, password2]);
+
 })
